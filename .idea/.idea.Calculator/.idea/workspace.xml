@@ -7,14 +7,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2db222dd-7bc0-4007-8685-ee8b5740f93e" name="Changes" comment="" />
+    <list default="true" id="2db222dd-7bc0-4007-8685-ee8b5740f93e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Calculator/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Calculator/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Calculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Calculator/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calculator/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/MainWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calculator/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/MainWindow.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calculator/bin/Debug/net6.0-windows/Calculator.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/bin/Debug/net6.0-windows/Calculator.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calculator/bin/Debug/net6.0-windows/Calculator.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/bin/Debug/net6.0-windows/Calculator.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calculator/bin/Debug/net6.0-windows/Calculator.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/bin/Debug/net6.0-windows/Calculator.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/Calculator.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/Calculator.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/Calculator.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/Calculator.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/Calculator.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/Calculator.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/Calculator.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/Calculator.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/Calculator.g.resources" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/Calculator.g.resources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/Calculator.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/Calculator.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/MainWindow.baml" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/MainWindow.baml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/MainWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/MainWindow.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/ref/Calculator.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/ref/Calculator.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/refint/Calculator.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/refint/Calculator.dll" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="history_panel" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fcb77c999ea74b04b952992f6b5e2d6df87eb0/f9/40c3191a/Grid.cs" root0="SKIP_HIGHLIGHTING" />
@@ -85,11 +117,52 @@
       <workItem from="1706999404875" duration="678000" />
       <workItem from="1707000099666" duration="5810000" />
       <workItem from="1707020000396" duration="4110000" />
+      <workItem from="1707084619877" duration="1313000" />
+      <workItem from="1707088424493" duration="1544000" />
+      <workItem from="1707157172519" duration="3386000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="history_panel" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="history_panel" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

@@ -59,6 +59,19 @@
             </Style.Triggers>
         </Style> <!-- Tool Buttons -->
 
+        <Style x:Key="HistoryPanel" TargetType="ScrollViewer">
+            <Setter Property="Background" Value="#2a2929" />
+            <Setter Property="Margin" Value="7.5 2.5 7.5 10" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ScrollViewer">
+                        <Border CornerRadius="5 5 5 5" Background="{TemplateBinding Background}">
+                            <ScrollContentPresenter VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style> <!-- History Panel -->
         <Style x:Key="History" TargetType="{x:Type Button}">
             <Setter Property="Background" Value="Transparent" />
             <Setter Property="BorderThickness" Value="0" />
@@ -78,6 +91,17 @@
                 </Trigger>
             </Style.Triggers>
         </Style> <!-- History Button -->
+        <Style x:Key="HistoryText" TargetType="TextBlock">
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="LineStackingStrategy" Value="BlockLineHeight" />
+            <Setter Property="TextAlignment" Value="Right" />
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="Height" Value="25"></Setter>
+            <Setter Property="Margin" Value="0, 5, 5, 5"></Setter>
+        </Style> <!-- History Text Blocks -->
     </Window.Resources>
 
     <StackPanel>
@@ -194,30 +218,13 @@
         </Grid>
 
         <!-- History Panel -->
-        <Grid x:Name="HistoryPanel" Panel.ZIndex="1000" Visibility="Collapsed" Height="326">
-
-            <ScrollViewer MouseWheel="ListViewScrollViewer_PreviewMouseWheel">
-                <ScrollViewer.Style>
-                    <Style TargetType="ScrollViewer">
-                        <Setter Property="Background" Value="#2a2929" />
-                        <Setter Property="Margin" Value="5 5 5 0" />
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="ScrollViewer">
-                                    <Border CornerRadius="15 15 0 0" Background="{TemplateBinding Background}">
-                                        <ContentPresenter VerticalAlignment="Bottom" HorizontalAlignment="Right" />
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                    </Style>
-                </ScrollViewer.Style>
-                <StackPanel>
-                    <TextBlock TextWrapping="Wrap" Margin="10 10 15 15" FontSize="20" Foreground="White"
-                               Name="HistoryText" LineStackingStrategy="BlockLineHeight" LineHeight="30"
-                               TextAlignment="Right"
-                               ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto"
-                               Width="Auto" />
+        <Grid x:Name="HistoryPanel" Panel.ZIndex="1000" Visibility="Collapsed" Height="330">
+            <Grid.Resources>
+                <Style TargetType="{x:Type ScrollViewer}" BasedOn="{StaticResource HistoryPanel}" />
+                <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource HistoryText}" />
+            </Grid.Resources>
+            <ScrollViewer>
+                <StackPanel Name="HistoryText" Width="305">
                 </StackPanel>
             </ScrollViewer>
         </Grid>
