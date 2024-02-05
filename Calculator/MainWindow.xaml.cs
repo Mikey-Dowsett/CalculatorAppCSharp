@@ -71,7 +71,9 @@ public partial class MainWindow : Window {
             case "Equals":
                 try {
                     answer = Convert.ToString(dataTable.Compute(calculation, null));
-                    HistoryText.Text += $"\n{calculation}={answer}";
+                    TextBlock textBlock = new TextBlock();
+                    textBlock.Text += $"{calculation} = {answer}";
+                    HistoryText.Children.Insert(0, textBlock);
                     calculation = answer;
                     break;
                 }
