@@ -8,7 +8,8 @@
         ResizeMode="NoResize"
         WindowStyle="None"
         FontFamily="Roboto"
-        Background="#121212"
+        AllowsTransparency="True"
+        Background="Transparent"
         Title="Calculator" Height="470" Width="320">
     <Window.Resources>
         <Style TargetType="{x:Type Grid}">
@@ -38,15 +39,27 @@
                 </Trigger>
             </Style.Triggers>
         </Style> <!-- Calculator Buttons -->
-        <Style x:Key="ToolButtons" TargetType="{x:Type Button}">
+        <Style x:Key="ToolBorders" TargetType="{x:Type Border}">
             <Setter Property="Background" Value="#121212" />
-            <Setter Property="Foreground" Value="White" />
             <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#515151" />
+                    <Setter Property="Cursor" Value="Hand" />
+                </Trigger>
+            </Style.Triggers>
+        </Style> <!-- Tool Borders -->
+        <Style x:Key="ToolButtons" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="FontSize" Value="15" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border Background="{TemplateBinding Background}">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"></ContentPresenter>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
@@ -100,133 +113,146 @@
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
             <Setter Property="HorizontalAlignment" Value="Stretch" />
             <Setter Property="Height" Value="25"></Setter>
-            <Setter Property="Margin" Value="0, 5, 5, 5"></Setter>
+            <Setter Property="Margin" Value="5, 5, 15, 5"></Setter>
         </Style> <!-- History Text Blocks -->
     </Window.Resources>
+    <Border CornerRadius="15" BorderBrush="#121212" BorderThickness="5" Background="#121212" RenderOptions.EdgeMode="Aliased">
+        <StackPanel>
+            <!-- Tool Bar -->
+            <Grid Height="30" MouseLeftButtonDown="DragWindow">
+                <Grid.Resources>
+                    <Style TargetType="{x:Type Border}" BasedOn="{StaticResource ToolBorders}" />
+                    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource ToolButtons}" />
+                </Grid.Resources>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="45" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="40" />
+                    <ColumnDefinition Width="40" />
+                    <ColumnDefinition Width="40" />
+                </Grid.ColumnDefinitions>
+                <Image Grid.Row="1" Grid.Column="0" Width="200" Margin="2"
+                       RenderOptions.BitmapScalingMode="NearestNeighbor"
+                       RenderOptions.EdgeMode="Aliased" Source="Calculator.Ico" />
+                <TextBlock Grid.Row="1" Grid.Column="1" Foreground="White" FontSize="15" VerticalAlignment="Center"
+                           Margin="5" Text="Calculator" />
+                
+                <Border Grid.Row="0" Grid.RowSpan="2" Grid.Column="2">
+                    <Button Click="MinimizeApp" Content="─" />
+                </Border>
+                <Border Grid.Row="0" Grid.RowSpan="2" Grid.Column="3">
+                    <Button Click="MaximizeApp" Content="▢" />
+                </Border>
+                <Border Grid.Row="0" Grid.RowSpan="2" Grid.Column="4" CornerRadius="0 15 0 0">
+                    <Button Click="CloseApp" Content="✕"/>
+                </Border>
+            </Grid>
+            <!-- History and Options -->
+            <Grid Height="35">
+                <Grid.Resources>
+                    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource History}" />
+                </Grid.Resources>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="40" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="Standard">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="Foreground" Value="White" />
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                            <Setter Property="FontSize" Value="20"></Setter>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+                <Button Grid.Row="1" Grid.Column="2" Width="30" Click="ShowHistory">
+                    <Image Margin="5" RenderOptions.BitmapScalingMode="NearestNeighbor"
+                           RenderOptions.EdgeMode="Aliased" Source="History.ico" />
+                </Button>
+            </Grid>
+            <!-- Answer -->
+            <Border>
+                <Label VerticalContentAlignment="Center" HorizontalContentAlignment="Right">
+                    <TextBlock FontSize="50" Name="CalcDisplay" Foreground="White" Margin="1">0</TextBlock>
+                </Label>
+            </Border>
+            <!-- Main Calculator Button Grid Layout -->
+            <Grid Button.Click="Button_Click" Height="324" Name="CalculatorBody" Visibility="Visible">
+                <Grid.Resources>
+                    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource CalcButtons}" />
+                </Grid.Resources>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="2.5" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="5" />
+                </Grid.ColumnDefinitions>
+                <!--Functions-->
+                <Button Grid.Row="6" Grid.Column="4" Name="Equals">=</Button>
+                <Button Grid.Row="5" Grid.Column="4" Name="Plus">+</Button>
+                <Button Grid.Row="4" Grid.Column="4" Name="Minus">−</Button>
+                <Button Grid.Row="3" Grid.Column="4" Name="Multiply">×</Button>
+                <Button Grid.Row="2" Grid.Column="4" Name="Divide">÷</Button>
+                
+                <Button Grid.Row="1" Grid.Column="4" Name="Remove">⌫</Button>
+                <Button Grid.Row="1" Grid.Column="3" Name="Clear">C</Button>
+                <Button Grid.Row="1" Grid.Column="1" Name="Pie">π</Button>
+                <Button Grid.Row="1" Grid.Column="2" Name="Log">log</Button>
+                
+                <Button Grid.Row="2" Grid.Column="3" Name="Remainder">%</Button>
+                <Button Grid.Row="2" Grid.Column="2" Name="SquareRoot">√</Button>
+                <Button Grid.Row="2" Grid.Column="1" Name="Square">x²</Button>
+                
+                <Button Grid.Row="6" Grid.Column="1" Name="Negative">±</Button>
+                <Button Grid.Row="6" Grid.Column="3" Name="Decimal">.</Button>
 
-    <StackPanel>
-        <!-- Tool Bar -->
-        <Grid Height="30" MouseLeftButtonDown="DragWindow">
-            <Grid.Resources>
-                <Style TargetType="{x:Type Button}" BasedOn="{StaticResource ToolButtons}" />
-            </Grid.Resources>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="5" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="45" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="40" />
-                <ColumnDefinition Width="40" />
-                <ColumnDefinition Width="40" />
-            </Grid.ColumnDefinitions>
-            <Image Grid.Row="1" Grid.Column="0" Width="200" Margin="2"
-                   RenderOptions.BitmapScalingMode="NearestNeighbor"
-                   RenderOptions.EdgeMode="Aliased" Source="Calculator.Ico" />
-            <TextBlock Grid.Row="1" Grid.Column="1" Foreground="White" FontSize="15" VerticalAlignment="Center"
-                       Margin="5" Text="Calculator" />
-            <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="2" FontSize="15" Click="MinimizeApp" Content="─" />
-            <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="3" FontSize="15" Click="MaximizeApp">▢</Button>
-            <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="4" FontSize="15" Click="CloseApp" Content="✕" />
-        </Grid>
-
-        <!-- History and Options -->
-        <Grid Height="35">
-            <Grid.Resources>
-                <Style TargetType="{x:Type Button}" BasedOn="{StaticResource History}" />
-            </Grid.Resources>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="5" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="10" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="40" />
-            </Grid.ColumnDefinitions>
-            <TextBlock Grid.Row="1" Grid.Column="1" Text="Standard">
-                <TextBlock.Style>
-                    <Style TargetType="TextBlock">
-                        <Setter Property="Background" Value="Transparent" />
-                        <Setter Property="Foreground" Value="White" />
-                        <Setter Property="VerticalAlignment" Value="Center" />
-                        <Setter Property="FontSize" Value="20"></Setter>
-                    </Style>
-                </TextBlock.Style>
-            </TextBlock>
-            <Button Grid.Row="1" Grid.Column="2" Width="30" Click="ShowHistory">
-                <Image Margin="5" RenderOptions.BitmapScalingMode="NearestNeighbor"
-                       RenderOptions.EdgeMode="Aliased" Source="History.ico" />
-            </Button>
-        </Grid>
-
-        <!-- Answer -->
-        <Border>
-            <Label VerticalContentAlignment="Center" HorizontalContentAlignment="Right">
-                <TextBlock FontSize="50" Name="CalcDisplay" Foreground="White" Margin="1">0</TextBlock>
-            </Label>
-        </Border>
-
-        <!-- Main Calculator Button Grid Layout -->
-        <Grid Button.Click="Button_Click" Height="324" Name="CalculatorBody" Visibility="Visible">
-            <Grid.Resources>
-                <Style TargetType="{x:Type Button}" BasedOn="{StaticResource CalcButtons}" />
-            </Grid.Resources>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="0" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="2.5" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="5" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="5" />
-            </Grid.ColumnDefinitions>
-            <!--Functions-->
-            <Button Grid.Row="1" Grid.Column="4" Name="Plus">+</Button>
-            <Button Grid.Row="2" Grid.Column="4" Name="Minus">-</Button>
-            <Button Grid.Row="3" Grid.Column="4" Name="Multiply">*</Button>
-            <Button Grid.Row="4" Grid.Column="4" Name="Divide">/</Button>
-            <Button Grid.Row="1" Grid.Column="3" Name="Remainder">%</Button>
-            <Button Grid.Row="5" Grid.Column="1" Name="Negative">+/-</Button>
-            <Button Grid.Row="5" Grid.Column="4" Name="Equals">=</Button>
-            <Button Grid.Row="5" Grid.Column="3" Name="Decimal">.</Button>
-            <Button Grid.Row="1" Grid.Column="1" Name="Clear">C</Button>
-            <Button Grid.Row="1" Grid.Column="2" Name="ClearEntry">CE</Button>
-
-            <!-- Numbers -->
-            <Button Grid.Row="2" Grid.Column="1" Name="One">1</Button>
-            <Button Grid.Row="2" Grid.Column="2" Name="Two">2</Button>
-            <Button Grid.Row="2" Grid.Column="3" Name="Three">3</Button>
-            <Button Grid.Row="3" Grid.Column="1" Name="Four">4</Button>
-            <Button Grid.Row="3" Grid.Column="2" Name="Five">5</Button>
-            <Button Grid.Row="3" Grid.Column="3" Name="Six">6</Button>
-            <Button Grid.Row="4" Grid.Column="1" Name="Seven">7</Button>
-            <Button Grid.Row="4" Grid.Column="2" Name="Eight">8</Button>
-            <Button Grid.Row="4" Grid.Column="3" Name="Nine">9</Button>
-            <Button Grid.Row="5" Grid.Column="2" Name="Zero">0</Button>
+                <!-- Numbers -->
+                <Button Grid.Row="3" Grid.Column="1" Name="One">1</Button>
+                <Button Grid.Row="3" Grid.Column="2" Name="Two">2</Button>
+                <Button Grid.Row="3" Grid.Column="3" Name="Three">3</Button>
+                <Button Grid.Row="4" Grid.Column="1" Name="Four">4</Button>
+                <Button Grid.Row="4" Grid.Column="2" Name="Five">5</Button>
+                <Button Grid.Row="4" Grid.Column="3" Name="Six">6</Button>
+                <Button Grid.Row="5" Grid.Column="1" Name="Seven">7</Button>
+                <Button Grid.Row="5" Grid.Column="2" Name="Eight">8</Button>
+                <Button Grid.Row="5" Grid.Column="3" Name="Nine">9</Button>
+                <Button Grid.Row="6" Grid.Column="2" Name="Zero">0</Button>
 
 
-        </Grid>
-
-        <!-- History Panel -->
-        <Grid x:Name="HistoryPanel" Panel.ZIndex="1000" Visibility="Collapsed" Height="330">
-            <Grid.Resources>
-                <Style TargetType="{x:Type ScrollViewer}" BasedOn="{StaticResource HistoryPanel}" />
-                <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource HistoryText}" />
-            </Grid.Resources>
-            <ScrollViewer>
-                <StackPanel Name="HistoryText" Width="305">
-                </StackPanel>
-            </ScrollViewer>
-        </Grid>
-    </StackPanel>
+            </Grid>
+            <!-- History Panel -->
+            <Grid x:Name="HistoryPanel" Panel.ZIndex="1000" Visibility="Collapsed" Height="330">
+                <Grid.Resources>
+                    <Style TargetType="{x:Type ScrollViewer}" BasedOn="{StaticResource HistoryPanel}" />
+                    <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource HistoryText}" />
+                </Grid.Resources>
+                <ScrollViewer>
+                    <StackPanel Name="HistoryText" Width="305">
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+        </StackPanel>
+    </Border>
 </Window>

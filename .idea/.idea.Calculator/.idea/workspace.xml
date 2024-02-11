@@ -8,8 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2db222dd-7bc0-4007-8685-ee8b5740f93e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Calculator/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Calculator/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Calculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Calculator/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calculator.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator.sln.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Calculator/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/MainWindow.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Calculator/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/MainWindow.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Calculator/bin/Debug/net6.0-windows/Calculator.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/bin/Debug/net6.0-windows/Calculator.dll" afterDir="false" />
@@ -17,10 +17,10 @@
       <change beforePath="$PROJECT_DIR$/Calculator/bin/Debug/net6.0-windows/Calculator.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/bin/Debug/net6.0-windows/Calculator.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/Calculator.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/Calculator.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/Calculator.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/Calculator.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/Calculator.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/Calculator.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/Calculator.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/Calculator.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/Calculator.g.resources" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/Calculator.g.resources" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/Calculator.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/Calculator.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/Calculator.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/Calculator.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/MainWindow.baml" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/MainWindow.baml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/MainWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/MainWindow.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/obj/Debug/net6.0-windows/apphost.exe" afterDir="false" />
@@ -49,6 +49,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b756d57b94fb4ab9aa95a9b2a97fce1fa24ea0/41/65149f9e/Number.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fcb77c999ea74b04b952992f6b5e2d6df87eb0/f9/40c3191a/Grid.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -66,7 +67,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;ToolWindowRun.ShowToolbar&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;CalculatorFunctions&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -120,6 +121,11 @@
       <workItem from="1707084619877" duration="1313000" />
       <workItem from="1707088424493" duration="1544000" />
       <workItem from="1707157172519" duration="3386000" />
+      <workItem from="1707161094504" duration="311000" />
+      <workItem from="1707167249931" duration="3656000" />
+      <workItem from="1707171839111" duration="3476000" />
+      <workItem from="1707240927889" duration="676000" />
+      <workItem from="1707263196301" duration="178000" />
     </task>
     <servers />
   </component>
